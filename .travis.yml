@@ -1,9 +1,11 @@
-# This provides us with GCC binary support so we can run bash
+sudo: required
 language: generic
 
-sudo: required
+services:
+  - docker
 
-script: 
+script:
+  - wget -O- http://travis.debian.net/script.sh | sh -
 
-after_success: 
-
+if:
+  tag IS blank
